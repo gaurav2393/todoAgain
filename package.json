@@ -1,5 +1,5 @@
 {
-  "name": "ToDo Final",
+  "name": "ToDo_Final",
   "version": "1.0.0",
   "description": "This is my main ToDo",
   "author": "Gaurav Gera",
@@ -7,12 +7,21 @@
   "bugs": {
     "url": "https://github.com/gaurav2393"
   },
+  "scripts": {
+    "dev": "nodemon server/server.js",
+    "webpack": "webpack --config webpack.dev.config.js"
+  },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "node-sass": "^4.5.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
+    "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.12.0",
-    "webpack-hot-middleware": "^2.19.1"
+    "webpack-hot-middleware": "^2.20.0"
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
@@ -22,6 +31,8 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.8.0",
     "eslint-loader": "^1.9.0",
+    "morgan": "^1.9.0",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2"
   }
 }
