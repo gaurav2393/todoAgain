@@ -7,7 +7,7 @@ var TodoSchema = new mongoose.Schema({
   // we define a property for this model object
   // then what type it is, in this case, the
   // completed property will has to be a Boolean
-  completed: Boolean
+  completed: Boolean,
 
   // we can add validations too
   // just use an object literal here instead

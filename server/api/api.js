@@ -1,5 +1,5 @@
 var router = require('express').Router();
-var todosRouter = require('./todos/todos');
+var todosRouter = require('./todos/todosRoutes');
 
 // api router will mount other routers
 // for all our resources. Each resource directory
