@@ -41,11 +41,20 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                enforce: 'pre',
-                test: /\.(sass|scss)$/,
-                //loader: "style-loader!css-loader!sass-loader"
-                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+                test: /\.css$/,
+                loaders: [{
+                    loader: "style-loader"
+                },
+                    {
+                        loader: "css-loader"
+                    }]
             }
+            // {
+            //     enforce: 'pre',
+            //     test: /\.(sass|scss)$/,
+            //     //loader: "style-loader!css-loader!sass-loader"
+            //     loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+            // }
             // {
             //     test: /\.sass$/,
             //     loaders: [

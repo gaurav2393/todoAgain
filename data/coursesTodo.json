@@ -1,0 +1,20 @@
+{
+    "courses": [
+        {
+            "courseId": "1",
+            "courseName": "First"
+        },
+        {
+            "courseId": "2",
+            "courseName": "Second"
+        },
+        {
+            "courseId": "3",
+            "courseName": "Third"
+        },
+        {
+            "courseId": "4",
+            "courseName": "Fourth"
+        }
+    ]
+}
