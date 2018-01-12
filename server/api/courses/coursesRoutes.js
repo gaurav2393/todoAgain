@@ -1,6 +1,8 @@
-import express from 'express';
+//import express from 'express';
+var express = require('express');
 var router = express.Router();
-import controller from './coursesController';
+var controller = require('./coursesController');
+// import controller from './coursesController';
 
 router.param('id', controller.params);
 

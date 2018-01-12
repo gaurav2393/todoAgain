@@ -1,8 +1,8 @@
 import React from 'react';
 import {} from '../../utils/queries';
 
-class secondaryNav extends React.PureComponent {
-    constructor(){
+class SecondaryNav extends React.PureComponent {
+    constructor(props){
         super(props);
     }
     componentDidMount() {
@@ -15,3 +15,4 @@ class secondaryNav extends React.PureComponent {
         )
     }
 }
+export default SecondaryNav;

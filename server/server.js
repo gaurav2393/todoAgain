@@ -1,10 +1,18 @@
 var express = require('express');
 var app = express();
 var api = require('./api/api');
-var config = require('./config/config');
+var config = require('../webpack.dev.config');
+const webpack =  require('webpack');
+const compiler = webpack(config);
 // db.url is different depending on NODE_ENV
 //require('mongoose').connect(config.db.url);// make it work for your database
 const path = require('path');
+
+//Running webpack
+app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+}));
 
 // setup the app middlware
 require('./middleware/appMiddleware')(app);
@@ -19,7 +27,7 @@ module.exports = app;
 
 
 
-/* working code
+/*working code
 
 var express = require('express');
 const path = require('path');
@@ -51,7 +59,7 @@ app.get('/', function (req, res) {
 
 module.exports = app;
 
-working code till here */ 
+// working code till here */
 
 // setup the api
 //app.use('/', api);
