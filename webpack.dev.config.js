@@ -29,12 +29,12 @@ module.exports = {
     ],
      module: {
         loaders: [
-            {
-                enforce : 'pre',
-                test : /\.js$/,
-                loader : 'eslint-loader',
-                exclude : /(node_modules)/
-            },
+            // {
+            //     enforce : 'pre',
+            //     test : /\.js$/,
+            //     loader : 'eslint-loader',
+            //     exclude : /(node_modules)/
+            // },
             {
                 test: /\.(js|jsx)$/,
                 loader: "babel-loader",
@@ -48,13 +48,13 @@ module.exports = {
                     {
                         loader: "css-loader"
                     }]
+            },
+            {
+                enforce: 'pre',
+                test: /\.(sass|scss)$/,
+                //loader: "style-loader!css-loader!sass-loader"
+                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
             }
-            // {
-            //     enforce: 'pre',
-            //     test: /\.(sass|scss)$/,
-            //     //loader: "style-loader!css-loader!sass-loader"
-            //     loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-            // }
             // {
             //     test: /\.sass$/,
             //     loaders: [
