@@ -15,4 +15,5 @@ class SecondaryNav extends React.PureComponent {
         )
     }
 }
+
 export default SecondaryNav;

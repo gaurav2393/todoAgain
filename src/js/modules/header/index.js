@@ -1,5 +1,3 @@
-//this is faltu
+import Header from './header';
 
-import Error from './container';
-
-export default Error;
+export default Header;

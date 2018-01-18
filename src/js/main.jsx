@@ -7,18 +7,20 @@ import {
   Link,
   Switch
 } from 'react-router-dom';
-import Blog from './modules/blog';
+import Blogs from './modules/blogs';
 import ErrorComp from './modules/error';
+import Header from './modules/header';
 
 class Main extends React.Component {
     render(){
         return(
             <Router>
                 <div>
+                    <Route component={Header} />
                     <div>
                         <Switch>
                             <Route exact path='/' component={SecondaryNav} />
-                            <Route path='/blogs' component={Blog} />
+                            <Route path='/blogs' component={Blogs} />
                             <Route path='/*' component={ErrorComp} />
                         </Switch>
                     </div>
