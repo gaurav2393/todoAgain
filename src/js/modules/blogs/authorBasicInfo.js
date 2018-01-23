@@ -6,7 +6,7 @@ function AuthorBasicInfo(props) {
         <div className="blog-author">
             <img src={props.imagePath} alt='author image'/>
             <div>
-                <h2>{props.name}</h2>
+                <h2>{props.name} <span class="follow">Follow</span></h2>
                 <p>
                     {props.shortDesc}
                 </p>

@@ -1,0 +1,16 @@
+.blog-author img, .blog-author div {
+    display: inline-block;
+    vertical-align: top;
+}
+.blog-author img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.blog-author div {
+    padding-left: 15px;
+}
+.blog-author div p {
+    color: rgba(0,0,0,.54);
+    fill: rgba(0,0,0,.54);
+}
