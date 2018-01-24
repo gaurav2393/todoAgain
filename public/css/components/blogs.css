@@ -1,0 +1,35 @@
+/* Author Basic Info Starts here*/
+.blog-author img, .blog-author div {
+    display: inline-block;
+    vertical-align: top;
+}
+.blog-author img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.blog-author div {
+    padding-left: 15px;
+}
+.blog-author div p {
+    color: rgba(0,0,0,.54);
+    fill: rgba(0,0,0,.54);
+}
+/* Author Basic Info Ends Here*/
+
+/*Like And Share*/
+.like-share .like-blog {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #999;
+}
+.like-share .like-blog:hover {
+    border: 1px solid #666;
+}
+.like-share .like-blog img {
+    width: 30px;
+    height: 30px;
+}
+.share-blog i:before {
+    content: '\f064';
+}
