@@ -17,19 +17,57 @@
 }
 /* Author Basic Info Ends Here*/
 
+/*Author basic info and like share common*/
+.like-share, .blog-author {
+    display: inline-block;
+    vertical-align: top;
+}
+
 /*Like And Share*/
-.like-share .like-blog {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #999;
-}
-.like-share .like-blog:hover {
-    border: 1px solid #666;
-}
-.like-share .like-blog img {
+.like-share li a {
     width: 30px;
     height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+.like-share li a:hover {
+    border: 1px solid #333;
+}
+.like-share ul li i {
+    width: 20px;
+    height: 20px;
+}
+.like-share .like-blog {
+    position: relative;
+}
+.like-share .like-blog img {
+    width: 20px;
+    height: 20px;
+    /*Below code is to center align both vertically and horizontally an image inside any element(this element should have postion relative*/
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*Center align code ends here*/
+    /*Another approach to center align both vertically and horizontally an image inside any element
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    Center align code ends here*/
+    /*Another approach to center align both vertically and horizontally an image inside any element
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    Center align code ends here*/
 }
 .share-blog i:before {
     content: '\f064';
+    font-family: FontAwesome;
+}
+.comment-on-blog i:before {
+    content: '\f0e5';
+    font-family: FontAwesome;
 }
