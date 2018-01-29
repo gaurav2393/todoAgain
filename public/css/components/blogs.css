@@ -33,13 +33,22 @@
 .like-share li a:hover {
     border: 1px solid #333;
 }
-.like-share ul li i {
+.like-share ul li a {
+    position: relative;
+}
+.like-share li a i {
     width: 20px;
     height: 20px;
 }
-.like-share .like-blog {
-    position: relative;
+.like-share li a i::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: FontAwesome;
 }
+
 .like-share .like-blog img {
     width: 20px;
     height: 20px;
@@ -63,11 +72,9 @@
     text-align: center;
     Center align code ends here*/
 }
-.share-blog i:before {
+.share-blog i::before {
     content: '\f064';
-    font-family: FontAwesome;
 }
 .comment-on-blog i:before {
     content: '\f0e5';
-    font-family: FontAwesome;
 }
