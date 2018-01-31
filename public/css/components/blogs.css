@@ -40,15 +40,16 @@
     height: 50px;
     border: 1px solid #aaa;
     border-radius: 50%;
+    background-color: #fffaf0;
+    position: relative;
 }
 .like-share li a:hover {
     border: 1px solid #333;
+    background-color: #ffe4c4;
+    transition: 0.5s ease-in-out;
 }
 .like-share ul li {
     margin-bottom: 10px;
-}
-.like-share ul li a {
-    position: relative;
 }
 .like-share li a i {
     width: 20px;
@@ -94,6 +95,9 @@
 }
 .blog-main-image {
     margin-top: 30px;
+}
+.blog-main-image img {
+    width: 100%;
 }
 .blog-main-text h2 {
     font-size: 30px;

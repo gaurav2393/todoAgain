@@ -1,0 +1,8 @@
+header .logo img, header .logo p {
+    display: inline-block;
+    vertical-align: middle;
+}
+header .logo img {
+    margin-right: 10px;
+}
+

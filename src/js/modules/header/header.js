@@ -4,7 +4,10 @@ class Header extends React.PureComponent {
     render() {
         return (
             <header>
-                <p>This place is for header</p>
+                <div className="logo">
+                    <img src="images/logo.png" alt="Website Logo" />
+                    <p className="brand-name">My Website</p>
+                </div>
             </header>
         )
     }
