@@ -4,9 +4,43 @@ class Header extends React.PureComponent {
     render() {
         return (
             <header>
-                <div className="logo">
-                    <img src="images/logo.png" alt="Website Logo" />
-                    <p className="brand-name">My Website</p>
+                <div className="header-container">
+                    <div className="logo">
+                        <a>
+                            <img src="images/logo.png" alt="Website Logo" />
+                        </a>
+                    </div>
+                    <div className="primary-navigation">
+                        <ul>
+                            <li>
+                                <a>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a className="accordion-button-required">
+                                    Courses
+                                </a>
+                                <ul className="sub-navigation">
+                                    <li>
+                                        <a>
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </header>
         )
