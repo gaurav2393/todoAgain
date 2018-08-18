@@ -1,6 +1,11 @@
 import React from 'react';
+import PrimaryNavigation from './primaryNavigation';
+import HeaderTesting from '../headerExampleWithReducer';
 
 class Header extends React.PureComponent {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
             <header>
@@ -10,37 +15,8 @@ class Header extends React.PureComponent {
                             <img src="images/logo.png" alt="Website Logo" />
                         </a>
                     </div>
-                    <div className="primary-navigation">
-                        <ul>
-                            <li>
-                                <a>
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a className="accordion-button-required">
-                                    Courses
-                                </a>
-                                <ul className="sub-navigation">
-                                    <li>
-                                        <a>
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    <HeaderTesting />
+                    <PrimaryNavigation dd='gg'/>
                 </div>
             </header>
         )

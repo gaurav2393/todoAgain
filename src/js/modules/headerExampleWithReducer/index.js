@@ -1,5 +1,5 @@
 //this is faltu
 
-import Error from './container';
+import Header from './container';
 
-export default Error;
+export default Header;

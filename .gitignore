@@ -1,2 +1,5 @@
 node_modules
 dist/
+src/js/todo1.jsx
+src/js/todo.jsx
+src/js/addTodo.jsx

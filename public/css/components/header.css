@@ -1,4 +1,8 @@
 header {
+    border-bottom: 2px solid #4682b4;
+}
+
+.header-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 10px 0;
@@ -13,7 +17,7 @@ header .header-container img {
 }
 header .logo, header .primary-navigation {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 header .logo {
     width: 20%;
@@ -24,24 +28,35 @@ header .primary-navigation {
 }
 .primary-navigation ul li {
     display: inline-block;
+    position: relative;
 }
 .primary-navigation ul li a {
     text-transform: uppercase;
     font-size: 20px;
-    color: #777;
-    padding: 5px 8px;
+    color: #444;
+    padding: 8px 15px;
 }
 .primary-navigation ul li a:hover {
-    color: #333;
-    background-color: steelblue;
+    opacity: 0.7;
+    transition: 0.4s ease-out;
 }
 .primary-navigation ul .accordion-button-required::after {
     font-family: fontawesome;
     content: '\f078';
+    position: relative;
+    left: 5px;
+    font-size: 14px;
+    top: -2px;
 }
-.primary-navigation ul a:hover .accordion-button-required::after {
-    content: '\f077';
-}
+
 .primary-navigation .sub-navigation {
     position: absolute;
+    padding-top: 12px;
+    display: none;
+}
+.primary-navigation ul li.show-sub-navigation .sub-navigation, .primary-navigation .sub-navigation:hover {
+    display: block;
+}
+.primary-navigation .sub-navigation li {
+    display: block;
 }
