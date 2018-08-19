@@ -5,12 +5,6 @@ class primaryNavigation extends React.PureComponent {
     constructor(props) {
         super(props);
     }
-    // componentWillMount() {
-    //     console.log('dd',this.props);
-    //     this.props={};
-    //     console.log(this.props);
-    //     console.log(this.props.dd);
-    // }
 
     showSubNavigation(event) {
         event.currentTarget.classList += ' show-sub-navigation';

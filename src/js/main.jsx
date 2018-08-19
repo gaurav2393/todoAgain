@@ -41,7 +41,7 @@ class Main extends React.Component {
                             <Switch>
                                 <Route exact path='/' component={SecondaryNav} />
                                 <Route path='/blogs' component={Blogs} />
-                                <Route path='/courses' component={Courses} />
+                                <Route path='/courses' component={Blogs} />
                                 <Route path='/*' component={ErrorComp} />
                             </Switch>
                         </div>

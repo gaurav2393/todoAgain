@@ -16,7 +16,7 @@ class Header extends React.PureComponent {
                         </a>
                     </div>
                     <HeaderTesting />
-                    <PrimaryNavigation dd='gg'/>
+                    <PrimaryNavigation/>
                 </div>
             </header>
         )
