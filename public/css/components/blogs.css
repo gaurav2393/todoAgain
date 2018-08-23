@@ -109,3 +109,26 @@
     line-height: 1.5;
     margin-bottom: 20px;
 }
+@media only screen and (max-width: 768px) {
+    .blog-container {
+        padding: 10px;
+    }
+    .blog-container .social-share, .blog-container .blog-description {
+        width: auto;
+        display: block;
+        margin-top: 10px;
+    }
+    .like-share ul {
+        text-align: center;
+    }
+    .like-share ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .blog-main-text h2 {
+        font-size: 18px;
+    }
+    .blog-main-text p {
+        font-size: 14px;
+    }
+}
