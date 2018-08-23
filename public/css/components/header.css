@@ -102,7 +102,7 @@ header .logo {
     .primary-navigation ul li::before {
         color: #fff;
         float: left;
-        margin: 10px 0 0 5px;
+        margin: 15px 0 0 5px;
         width: 5px;
         content: '\2022';
     }
