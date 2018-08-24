@@ -75,6 +75,53 @@ header .logo {
         width: 42px;
         height: 42px;
         vertical-align: super;
+        background: none;
+        border: 0;
+        position: relative;
+        border: 1px solid #000;
+    }
+    .header-menu-icon span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition: 250ms ease-in-out;
+        -moz-transition: 250ms ease-in-out;
+        transition: 250ms ease-in-out;
+        display: block;
+        opacity: 1;
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+    }
+    .header-menu-icon span:nth-of-type(1) {
+        margin: -9px 0 0;
+    }
+    .header-menu-icon span:nth-of-type(3) {
+        margin: 9px 0 0;
+    }
+    .header-menu-icon.menu-active span:nth-of-type(1) {
+        -webkit-transform: translate(-50%, -50%) rotate(45deg);
+        -moz-transform: translate(-50%, -50%) rotate(45deg);
+        -ms-transform: translate(-50%, -50%) rotate(45deg);
+        -o-transform: translate(-50%, -50%) rotate(45deg);
+        transform: translate(-50%, -50%) rotate(45deg);
+        margin: 0;
+    }
+    .header-menu-icon.menu-active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .header-menu-icon.menu-active span:nth-of-type(3) {
+        -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+        -moz-transform: translate(-50%, -50%) rotate(-45deg);
+        -ms-transform: translate(-50%, -50%) rotate(-45deg);
+        -o-transform: translate(-50%, -50%) rotate(-45deg);
+        transform: translate(-50%, -50%) rotate(-45deg);
+        margin: 0;
     }
     header .primary-navigation {
         display: none;

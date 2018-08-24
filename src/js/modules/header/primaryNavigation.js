@@ -17,9 +17,11 @@ class primaryNavigation extends React.PureComponent {
 
     toggleNavMobile() {
         if(this.refs.primaryNavigation.className.indexOf('display-block')>-1) {
-            this.refs.primaryNavigation.classList.remove('display-block')
+            this.refs.primaryNavigation.classList.remove('display-block');
+            this.refs.burgerMenu.classList.remove('menu-active');
         } else {
             this.refs.primaryNavigation.classList += ' display-block';
+            this.refs.burgerMenu.classList += ' menu-active';
         }
     }
 
@@ -82,7 +84,7 @@ class primaryNavigation extends React.PureComponent {
                         </li>
                     </ul>
                 </nav>
-                <button className="header-menu-icon" onClick={this.toggleNavMobile}>
+                <button ref="burgerMenu" className="header-menu-icon" onClick={this.toggleNavMobile}>
                     <span>
                     </span>
                     <span>
