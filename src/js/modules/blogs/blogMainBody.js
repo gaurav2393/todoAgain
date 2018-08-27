@@ -17,7 +17,7 @@ class BlogMainBody extends React.PureComponent {
                         lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum 
                         lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum lorem Ipsum 
                     </p>
-                    <p class="some-important-text">
+                    <p className="some-important-text">
                         Some important formula
                     </p>
                     <p>
