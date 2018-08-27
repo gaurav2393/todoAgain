@@ -162,7 +162,7 @@ header .logo {
     }
     .primary-navigation ul .accordion-button-required::after {
         position: absolute;
-        right: 20px;
+        right: 10px;
         left: inherit;
         top: inherit;
     }

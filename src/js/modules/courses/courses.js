@@ -5,8 +5,9 @@ import CoursePageNavigation from './coursePageNavigation';
 
 class Courses extends React.PureComponent {
     render() {
+        console.log('course props', this.props);
         return(
-            <div>
+            <div class="course-container">
                 <CourseContentNavigation />
                 <CourseContent />
                 <CoursePageNavigation />
