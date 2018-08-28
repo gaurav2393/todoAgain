@@ -28,6 +28,9 @@ class CourseContentNavigation extends React.PureComponent {
                     {map(this.state.topics, (value, index) => {
                         return <li className={index === 0 ? 'active-topic': '' } 
                             key={value}>
+                                <i className={index===0 ? 'visited-course-topic' : '' }>
+                                    {index+1}
+                                </i>
                                 <a href="javascript: void(0)">
                                     {value}
                                 </a>

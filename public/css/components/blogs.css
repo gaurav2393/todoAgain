@@ -104,8 +104,12 @@
     font-weight: bold;
     margin: 20px 0;
 }
+.blog-main-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
 .blog-main-text p {
-    font-size: 21px;
+    font-size: 18px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -127,6 +131,9 @@
     }
     .blog-main-text h2 {
         font-size: 18px;
+    }
+    .blog-main-text h3 {
+        font-size: 16px;
     }
     .blog-main-text p {
         font-size: 14px;

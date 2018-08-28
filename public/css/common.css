@@ -52,3 +52,10 @@ a:hover {
     padding: 14px;
     border-radius: 5px;
 }
+.more-important-text {
+    border-left: 4px solid #137333;
+    border-radius: 4px;
+    background: #E6F4EA;
+    color: #212124;
+    padding: 15px;
+}
