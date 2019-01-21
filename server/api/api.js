@@ -15,5 +15,6 @@ router.get('/', function (req, res) {
 
 //router for courses
 router.use('/courses', coursesRouter);
+router.use('/questions', questionsRouter);
 
 module.exports = router;
