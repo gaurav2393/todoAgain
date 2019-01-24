@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var todosRouter = require('./todos/todosRoutes');
 var coursesRouter = require('./courses/coursesRoutes');
-var questionsRouter = require('./courses/questionsRoutes');
+var questionsRouter = require('./questions/questionsRoutes');
 const path = require('path');
 
 // api router will mount other routers

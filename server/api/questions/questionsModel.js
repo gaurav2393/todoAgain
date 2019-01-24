@@ -18,4 +18,5 @@ var QuestionSchema = ({
     }
 });
 
-module.exports = mongoose.model('questions', QuestionSchema);
+// module.exports = mongoose.model('questions', QuestionSchema);
+module.exports = mongoose.model('something', QuestionSchema);
