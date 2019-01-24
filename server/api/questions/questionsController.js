@@ -9,8 +9,12 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', function callback () {
     console.log('Conntected To Mongo Database');
 });
+var Schema = mongoose.Schema;
 var questions = mongoose.model('questions', new Schema({ url: String, text: String, id: Number}), 
     'questions');
+questions.find({}, function(err, data){
+    console.log(">>>> " + data );
+});
 exports.params = function(req, res, next, id) {
 
 }
