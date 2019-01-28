@@ -6,7 +6,7 @@ var controller = require('./questionsController');
 
 router.param('id', controller.params);
 
-router.route('/todosQuestions')
+router.route('/')
     .get(controller.getTodoQuestions)
     .post(controller.postTodoQuestions)
 
