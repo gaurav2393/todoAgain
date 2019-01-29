@@ -25,6 +25,16 @@ exports.getTodoQuestions = function(req, res, next) {
     // res.sendFile(path.join(__dirname, '../data/data.json'));
 }
 exports.postTodoQuestions = function(req, res, next) {
-    console.log('received file', req.body);
+    console.log('received file', req.body[0]);
+    var length = req.body.length;
+    var count;
+    var data = [];
+    Question.countDocuments({}, function(err, data){
+        count = data;
+    })
+    for (let i = 0 ; i < length ; i++) {
+        let temp = {};
+        temp['']
+    }
     res.sendFile(path.join(__dirname, '../../../data/coursesTodo.json'));
 }
