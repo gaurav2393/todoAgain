@@ -17,20 +17,20 @@ class QuestionsAddAndRemove extends React.PureComponent {
     }
 
     handleSubmit() {
-        fetch('/courses/todosCourses', {
+        fetch('/addQuestions', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({a: 1, b: 'Textual content'})
+            body: this.state.value
         });
     }
 
     render() {
         return(
             <div>
-                <textarea onChange={this.handleChange} rows="4" cols="50">
+                <textarea className="questions-textarea" onChange={this.handleChange} rows="25" cols="50">
                     {this.state.value}
                 </textarea>
                 <button onClick={this.handleSubmit}>

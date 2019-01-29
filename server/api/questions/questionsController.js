@@ -2,6 +2,7 @@ var Question = require('./questionsModel');
 var _ = require('lodash');
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://127.0.0.1/first';
+const path = require('path');
 mongoose.connect(mongoDB, { useMongoClient: true });
 mongoose.Promise = global.Promise
 var db = mongoose.connection;
@@ -20,11 +21,10 @@ exports.params = function(req, res, next, id) {
 }
 
 exports.getTodoQuestions = function(req, res, next) {
-    Question.find({}, function(err, data) {
-        res.send(JSON.stringify(data));
-    });
+    res.sendFile(path.join(__dirname, '../../../data/coursesTodo.json'));
     // res.sendFile(path.join(__dirname, '../data/data.json'));
 }
 exports.postTodoQuestions = function(req, res, next) {
-    res.sendFile(path.join(__dirname, '../data/data.json'));
+    console.log('received file', req.body);
+    res.sendFile(path.join(__dirname, '../../../data/coursesTodo.json'));
 }
