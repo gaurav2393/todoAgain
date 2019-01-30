@@ -23,9 +23,8 @@ exports.params = function(req, res, next, id) {
 exports.getTodoQuestions = function(req, res, next) {
     // res.sendFile(path.join(__dirname, '../../../data/coursesTodo.json'));
     Question.find({}, function(err, data){
-        console.log(">>>> " + data );
+        res.send(data);
     });
-    res.sendFile(path.join(__dirname, '../data/data.json'));
 }
 exports.postTodoQuestions = function(req, res, next) {
     console.log('received file', req.body[0]);
@@ -54,7 +53,6 @@ exports.postTodoQuestions = function(req, res, next) {
         data.push(temp);
     }
     Question.insertMany(data, { ordered: false }, function(err, docs) {
-        console.log('pushed', docs);
-    })
-    res.sendFile(path.join(__dirname, '../../../data/coursesTodo.json'));
+        res.send(data);
+    });
 }

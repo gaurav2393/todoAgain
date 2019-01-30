@@ -1,5 +1,5 @@
 //this is faltu
 
-import Header from './container';
+import QuestionsAddAndRemove from './container';
 
-export default Header;
+export default QuestionsAddAndRemove;
