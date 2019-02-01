@@ -82,6 +82,29 @@ class primaryNavigation extends React.PureComponent {
                                 </li>
                             </ul>
                         </li>
+                        <li className="nav-level-1 has-sub-navigation" onMouseOver={this.showSubNavigation} 
+                            onMouseOut={this.hideSubNavigation} >
+                            <a className="accordion-button-required">
+                                Practice
+                            </a>
+                            <ul className="sub-navigation">
+                                <li>
+                                    <a>
+                                        Quantitative
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        Verbal
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        Reasoning
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <button ref="burgerMenu" className="header-menu-icon" onClick={this.toggleNavMobile}>

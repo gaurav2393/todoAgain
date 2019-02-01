@@ -33,6 +33,7 @@ header .logo {
 .primary-navigation ul li {
     display: inline-block;
     position: relative;
+    text-align: left;
 }
 .primary-navigation ul li a {
     text-transform: uppercase;

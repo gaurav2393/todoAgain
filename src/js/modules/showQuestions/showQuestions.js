@@ -11,7 +11,9 @@ class ShowQuestions extends React.PureComponent {
     componentDidMount() {
         fetch('/addQuestions', {
             method: 'GET'
-        }).then(data=> {
+        }).then(data => {
+            return data.json();
+        }).then(data => {
             console.log('lets see the data', data);
         });
     }
