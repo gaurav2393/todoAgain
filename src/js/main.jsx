@@ -13,6 +13,7 @@ import ErrorComp from './modules/error';
 import QuestionsAddAndRemove from './modules/questionsAddAndRemove';
 import Header from './modules/header';
 import headerExampleWithReducer from './modules/headerExampleWithReducer/reducer';
+import PracticeTopics from './modules/practiceTopics';
 import { Provider } from "react-redux";
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import rootSaga from "./sagas/sagas";
@@ -44,6 +45,7 @@ class Main extends React.Component {
                                 <Route path='/blogs' component={Blogs} />
                                 <Route path='/courses' component={ props => <Courses {...props} />} />
                                 <Route path='/questions' component={ props => <QuestionsAddAndRemove {...props} />} />
+                                <Route path='/practiceQuestions' component={ props => <PracticeTopics {...props} />} />
                                 {/* <Route path='/courses' render={ props => <Courses {...props} />} /> */}
                                 <Route path='/*' component={ErrorComp} />
                             </Switch>
@@ -53,6 +55,7 @@ class Main extends React.Component {
                             <Link to='/blogs'>Blogs</Link>
                             <Link to='/courses'>Courses</Link>
                             <Link to='/questions'>Question</Link>
+                            <Link to='/practiceQuestions'>Practice Questions</Link>
                             <Link to='/whatever/geg'>anything Else</Link>
                         </div>
                     </div>
