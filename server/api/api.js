@@ -2,6 +2,7 @@ var router = require('express').Router();
 var todosRouter = require('./todos/todosRoutes');
 var coursesRouter = require('./courses/coursesRoutes');
 var questionsRouter = require('./questions/questionsRoutes');
+var practiceTopicRouter = require('./practiceTopic/practiceTopicRoutes');
 const path = require('path');
 
 // api router will mount other routers
@@ -17,6 +18,7 @@ router.get('/', function (req, res) {
 //router for courses
 router.use('/courses', coursesRouter);
 router.use('/addQuestions', questionsRouter);
+router.use('/practiceTopic', practiceTopicRouter);
 router.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
