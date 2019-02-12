@@ -10,28 +10,29 @@ class PracticeTopics extends React.PureComponent {
 
     componentDidMount() {
         let url = window.location.href.split('/');
-        // gettopicsList(url[url.length - 1]);
-        this.setState({
-            topicsList: [{
-                topicName: 'Time and Distance',
-                topicLink: 'timeAndDistance'
-            }, {
-                topicName: 'Geometry',
-                topicLink: 'geometry'
-            }, {
-                topicName: 'Trigonometry',
-                topicLink: 'trigonometry'
-            }, {
-                topicName: 'Time and Distance',
-                topicLink: 'timeAndDistance'
-            }, {
-                topicName: 'Geometry',
-                topicLink: 'geometry'
-            }, {
-                topicName: 'Trigonometry',
-                topicLink: 'trigonometry'
-            }]
+        this.gettopicsList(url[url.length - 1]);
+    }
+
+    getPracticeData(url) {
+        fetch(`/${url}`, {
+            method: 'GET'
+        }).then(data => {
+            return data.json();
+        }).then(data => {
+            console.log('quant data', data);
         })
+    }
+
+    gettopicsList(urlParam) {
+        switch (urlParam) {
+            case 'quantitativeAptitude': this.getPracticeData('quant');
+                break;
+            case 'verbal': this.getPracticeData('verbal');
+                break;
+            case 'reasoning': this.getPracticeData('reasoning');
+                break;
+            default: break;
+        }
     }
 
     render() {
