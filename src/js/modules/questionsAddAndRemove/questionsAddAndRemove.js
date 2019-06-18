@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowQuestions from '../showQuestions';
+import ShowQuestionsList from '../showQuestionsList';
 
 class QuestionsAddAndRemove extends React.PureComponent {
     constructor(props) {
@@ -37,7 +37,7 @@ class QuestionsAddAndRemove extends React.PureComponent {
                 <button onClick={this.handleSubmit}>
                     Submit
                 </button>
-                <ShowQuestions />
+                <ShowQuestionsList />
             </div>
         )
     }

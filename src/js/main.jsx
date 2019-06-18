@@ -47,7 +47,7 @@ class Main extends React.Component {
                                 <Route path='/questions' component={ props => <QuestionsAddAndRemove {...props} />} />
                                 <Route path='/practiceQuestions' component={ props => <PracticeTopics {...props} />} />
                                 {/* <Route path='/courses' render={ props => <Courses {...props} />} /> */}
-                                <Route path='/*' component={ErrorComp} />
+                                <Route component={ErrorComp} />
                             </Switch>
                         </div>
                         <div>

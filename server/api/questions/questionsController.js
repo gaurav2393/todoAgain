@@ -23,6 +23,7 @@ exports.params = function(req, res, next, id) {
 exports.getTodoQuestions = function(req, res, next) {
     // res.sendFile(path.join(__dirname, '../../../data/coursesTodo.json'));
     Question.find({}, function(err, data){
+        console.log('data------', data);
         res.send(data);
     });
 }
