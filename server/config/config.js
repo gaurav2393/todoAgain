@@ -6,7 +6,7 @@ var config = {
   dev: 'development',
   test: 'testing',
   prod: 'production',
-  port: process.env.PORT || 3000
+  port: process.env.PORT || 3001
 };
 
 // check to see if the NODE_ENV was set, if not, then set it to dev

@@ -4,6 +4,7 @@
 var express = require('express');
 var path = require('path')
 var morgan = require('morgan');
+var multer = require('multer');
 var bodyParser = require('body-parser');
 const webpack =  require('webpack');
 const webpackConfig = require('../../webpack.dev.config');
@@ -20,4 +21,5 @@ module.exports = function(app) {
     app.use(morgan('dev'));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
+    app.use(multer().any());
 }

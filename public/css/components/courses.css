@@ -84,6 +84,9 @@
     .course-content-menu i.visited-course-topic {
         background-color: #1a73e8;
     }
+    .course-content-menu i.visited-course-topic::after {
+        border-color: #1a73e8;
+    }
     .course-content-navigation .course-content-menu {
         display: block;
         border-top: 0;

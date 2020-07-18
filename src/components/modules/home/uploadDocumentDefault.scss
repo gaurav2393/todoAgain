@@ -1,0 +1,27 @@
+.drag-drop-file {
+	margin-top: 30px;
+
+	.drag-upload-container {
+		text-align: center;
+		max-width: 315px;
+		margin: 20px auto 0;
+		display: flex;
+    	align-items: center;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		img {
+			width: 50px;
+    		height: 50px;
+		}
+
+		span {
+			padding: 8px 20px;
+			background-color: #fff;
+			margin-right: 20px;
+			border-radius: 25px;
+		}
+	}
+}

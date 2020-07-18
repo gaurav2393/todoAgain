@@ -1,0 +1,7 @@
+function getTodoCourses(){
+
+}
+
+function getDoneCourses(){
+    
+}

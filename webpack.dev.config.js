@@ -6,7 +6,8 @@ module.exports = {
     entry: [
         'babel-polyfill',
         //'webpack-hot-middleware/client?reload=true',
-        path.resolve(__dirname, "./src/js/main.jsx")
+        path.resolve(__dirname, "./src/components/main.jsx"),
+        path.resolve(__dirname, './src/app.scss')
     ],
     output: {
     	path: path.resolve(__dirname, "./public"),//try to change it to public and see what happens
@@ -38,6 +39,18 @@ module.exports = {
                     {
                         loader: "css-loader"
                     }]
+            },
+            {
+                enforce: 'pre',
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: { outputPath: path.resolve(__dirname, "./public"), name: 'app.min.css'}
+                    },
+                    'sass-loader'
+                ]
             }
             // {
             //     enforce: 'pre',

@@ -1,0 +1,141 @@
+.blog-container {
+    max-width: 800px;
+    margin: 30px auto 0;
+}
+
+/* Author Basic Info Starts here*/
+.blog-author img, .blog-author div {
+    display: inline-block;
+    vertical-align: top;
+}
+.blog-author img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.blog-author div {
+    padding-left: 15px;
+}
+.blog-author div p {
+    color: rgba(0,0,0,.54);
+    fill: rgba(0,0,0,.54);
+}
+/* Author Basic Info Ends Here*/
+.social-share {
+    width: 10%;
+    margin-top: 100px;
+}
+.blog-description {
+    width: 90%;
+}
+/*Author basic info and like share common*/
+.social-share, .blog-description {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*Like And Share*/
+.like-share li a {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    background-color: #fffaf0;
+    position: relative;
+}
+.like-share li a:hover {
+    border: 1px solid #333;
+    background-color: #ffe4c4;
+    transition: 0.5s ease-in-out;
+}
+.like-share ul li {
+    margin-bottom: 10px;
+}
+.like-share li a i {
+    width: 20px;
+    height: 20px;
+}
+.like-share li a i::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: FontAwesome;
+}
+
+.like-share .like-blog img {
+    width: 20px;
+    height: 20px;
+    /*Below code is to center align both vertically and horizontally an image inside any element(this element should have postion relative*/
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*Center align code ends here*/
+    /*Another approach to center align both vertically and horizontally an image inside any element
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    Center align code ends here*/
+    /*Another approach to center align both vertically and horizontally an image inside any element
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    Center align code ends here*/
+}
+.share-blog i::before {
+    content: '\f064';
+}
+.comment-on-blog i:before {
+    content: '\f0e5';
+}
+.blog-main-image {
+    margin-top: 30px;
+}
+.blog-main-image img {
+    width: 100%;
+}
+.blog-main-text h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.blog-main-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.blog-main-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+    .blog-container {
+        padding: 10px;
+    }
+    .blog-container .social-share, .blog-container .blog-description {
+        width: auto;
+        display: block;
+        margin-top: 10px;
+    }
+    .like-share ul {
+        text-align: center;
+    }
+    .like-share ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .blog-main-text h2 {
+        font-size: 18px;
+    }
+    .blog-main-text h3 {
+        font-size: 16px;
+    }
+    .blog-main-text p {
+        font-size: 14px;
+    }
+}
