@@ -3,3 +3,4 @@ export const localStorage = 'localStorage';
 export const name = 'name';
 export const token = 'token';
 export const cookie =  'cookie';
+export const userType = 'userType';

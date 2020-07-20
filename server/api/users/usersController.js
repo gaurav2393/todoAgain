@@ -73,7 +73,8 @@ exports.postUserData = async function(req, res, next) {
   res.json({
     userId: req.existingUser.name,
     email: req.existingUser.email,
-    token: token
+    token: token,
+    userType: req.existingUser.userType
   });
 }
 
@@ -85,7 +86,7 @@ exports.createUser = async function(req, res, next) {
         );
     }
 
-    const { loginEmail, loginPassword } = req.body;
+    const { loginEmail, loginPassword, phoneNumber, name } = req.body;
 
     let existingUser;
     try {
@@ -118,17 +119,26 @@ exports.createUser = async function(req, res, next) {
     }
 
     const createdUser = new Users({
-        name: '',
+        name,
         userType: 'basic',
         email: loginEmail,
-        password: hashedPassword
+        password: hashedPassword,
+        phoneNumber
     });
 
     try {
         const createdUserReturned = await createdUser.save();
-        console.log('cctt', createdUserReturned);
+        token = jwt.sign(
+          { userId: createdUserReturned.name, email: createdUserReturned.email, userType: createdUserReturned.userType },
+          'supersecret_dont_share',
+          { expiresIn: '1h' }
+        );
         res.status(201)
-        .json({})
+        .json({
+          userId: createdUserReturned.name,
+          email: createdUserReturned.email,
+          token: token,
+          userType: createdUserReturned.userType})
       } catch (err) {
         const error = new HttpError(
           'Signing up failed, please try again later.',

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PrimaryNavigation from './primaryNavigation';
 import HeaderLoginContainer from './headerLoginContainer';
 import HeaderLogoutContainer from './headerLogoutContainer';
@@ -8,19 +9,19 @@ class Header extends React.PureComponent {
         super(props);
     }
     render() {
-    const { userName } = this.props;
+    const { userName, removeLogin } = this.props;
 
         return (
             <header>
                 <div className="header-container">
                     <div className="logo">
-                        <a>
+                        <Link to='/'>
                             <img src="/images/logo.svg" alt="Website Logo" />
-                        </a>
+                        </Link>
                     </div>
                     <PrimaryNavigation/>
                     {userName ?
-                        <HeaderLogoutContainer />
+                        <HeaderLogoutContainer removeLogin={removeLogin} />
                         :<HeaderLoginContainer />
                     }
                 </div>

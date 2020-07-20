@@ -15,6 +15,9 @@ var userSchema = ({
     userType: {
         type: String,
         required: true
+    },
+    phoneNumber: {
+        type: Number
     }
 })
 

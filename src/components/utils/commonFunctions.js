@@ -1,5 +1,5 @@
 import { deleteCache, setCache } from '../utils/cache';
-import { name, token, localStorage, cookie } from '../utils/constants';
+import { name, token, localStorage, cookie, userType } from '../utils/constants';
 
 
 // This function checks whether the token in jwt is valid or not.
@@ -13,11 +13,13 @@ const checkLoggedIn = function () {
 const handleLogout = function () {
     deleteCache(name, localStorage);
     deleteCache(token, cookie);
+    deleteCache(userType,  localStorage);
 }
 
-const handleLogin = function ({nameValue, tokenValue}) {
+const handleLogin = function ({nameValue, tokenValue, typeValue}) {
     setCache(name, nameValue, localStorage);
     setCache(token, tokenValue, cookie);
+    setCache(userType, typeValue , localStorage)
 }
 
 export {

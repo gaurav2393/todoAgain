@@ -1,7 +1,15 @@
 const path = require('path');
 var Thread = require('./createThreadModel');
 
-exports.getCreateThread = function(req, res, next) {
+exports.params = async function(req, res, next) {
+    next();
+}
+
+exports.postComment = async function(req, res, next) {
+
+}
+
+exports.getComment = function(req, res, next) {
 
 }
 

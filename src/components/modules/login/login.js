@@ -18,6 +18,7 @@ class Login extends React.Component {
         e.preventDefault();
         e.stopPropagation();
         const { userFields } = this.state;
+        const { setLoginDetails } = this.props;
 
         fetch(`/users/${userFields.loginEmail}`, {
             method: 'POST',
@@ -32,8 +33,10 @@ class Login extends React.Component {
             if (response && response.token) {
                 handleLogin({
                     nameValue: response.userId,
-                    tokenValue: response.token
+                    tokenValue: response.token,
+                    typeValue: response.userType,
                 });
+                setLoginDetails(response);
                 this.setState({
                     isLoggedIn: true
                 })

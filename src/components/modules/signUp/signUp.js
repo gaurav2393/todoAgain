@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Link
 } from 'react-router-dom';
+import { handleLogin } from '../../utils/commonFunctions'
 
 class SignUp extends React.Component {
     constructor (props) {
@@ -18,6 +19,7 @@ class SignUp extends React.Component {
     handleSignUp(e) {
         e.preventDefault();
         const { userFields } = this.state;
+        const { setLoginDetails } = this.props;
 
         fetch('/users', {
             method: 'POST',
@@ -26,6 +28,20 @@ class SignUp extends React.Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(userFields)
+        }).then(data => {
+			return data.json();
+        }).then(response => {
+            if (response && response.token) {
+                handleLogin({
+                    nameValue: response.userId,
+                    tokenValue: response.token,
+                    typeValue: response.userType,
+                });
+                setLoginDetails(response);
+                this.setState({
+                    isLoggedIn: true
+                })
+            }
         })
     }
 
@@ -47,29 +63,29 @@ class SignUp extends React.Component {
                     </h1>
                     <div className="login-field-container">
                         <label htmlFor="name">
-                            Name:
+                            Name: *
                         </label>
-                        <input name="name" value={userFields.loginEmail} required onChange={this.handleChange} />
+                        <input name="name" value={userFields.name} required onChange={this.handleChange} />
                     </div>
                     <div className="login-field-container">
                         <label htmlFor="phoneNumber">
                             Phone Number:
                         </label>
                         <input name="phoneNumber"
-                            maxlength="10"
-                            minlength="10"
+                            maxLength="10"
+                            minLength="10"
                             pattern="^\d{10}$"
-                            value={userFields.loginEmail} required onChange={this.handleChange} />
+                            value={userFields.phoneNumber} onChange={this.handleChange} />
                     </div>
                     <div className="login-field-container">
                         <label htmlFor="loginEmail">
-                            Email:
+                            Email: *
                         </label>
                         <input name="loginEmail" value={userFields.loginEmail} type="email" required onChange={this.handleChange} />
                     </div>
                     <div className="login-field-container">
                         <label htmlFor="loginPassword">
-                            Password:
+                            Password: *
                         </label>
                         <input type="password" value={userFields.loginPassword} name="loginPassword" onChange={this.handleChange} required />
                     </div>

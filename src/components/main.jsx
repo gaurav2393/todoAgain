@@ -45,10 +45,28 @@ class Main extends React.Component {
             isLoggedIn: false,
             userName: userName || ''
         }
+        this.setLoginDetails = this.setLoginDetails.bind(this);
+        this.removeLogin = this.removeLogin.bind(this);
     }
     
     async componentDidMount() {
         // const isLoggedIn = await checkLoggedIn();
+    }
+
+    setLoginDetails(userData = {}) {
+        if (userData.userId) {
+            this.setState({
+                isLoggedIn: true,
+                userName: userData.userId
+            });
+        }
+    }
+
+    removeLogin() {
+        this.setState({
+            isLoggedIn: false,
+            userName: ''
+        })
     }
 
     render() {
@@ -58,14 +76,14 @@ class Main extends React.Component {
             <Provider store={store}>
                 <Router>
                     <div>
-                        <Route component={() => <Header userName={userName} />} />
+                        <Route component={() => <Header userName={userName} removeLogin={this.removeLogin} />} />
                         <div>
                             <Switch>
                                 <Route exact path='/' component={Home} />
                                 <Route path='/blogs' component={Blogs} />
                                 <Route path='/courses' component={ props => <Courses {...props} />} />
-                                <Route path='/login' component={props => <Login {...props} /> } />
-                                <Route path='/signup' component={props => <SignUp {...props} /> } />
+                                <Route path='/login' component={props => <Login {...props} setLoginDetails={this.setLoginDetails} /> } />
+                                <Route path='/signup' component={props => <SignUp {...props} setLoginDetails={this.setLoginDetails} /> } />
                                 <Route path='/questions' component={ props => <QuestionsAddAndRemove {...props} />} />
                                 <Route path='/practiceQuestions' component={ props => <PracticeTopics {...props} />} />
                                 <Route path='/doubts/:id' component={props => <DoubtPage {...props} userName={userName} /> } />
