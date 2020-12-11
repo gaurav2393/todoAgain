@@ -1,11 +1,13 @@
 .doubt-page-container {
     max-width: 860px;
     margin: 30px auto 0;
-    background-color: #008b8b;
     padding: 30px;
-    color: #f0f8ff;
-    font-weight: 700;
+    color: #000;
     letter-spacing: 1px;
+
+    img {
+        max-width: 100%;
+    }
 
     p {
         font-size: 16px;
@@ -30,7 +32,7 @@
 
         span {
             display: inline-block;
-            margin: 0 8px 0 0;
+            margin: 10px 8px 10px 0;
         }
 
         .doubt-status {
@@ -77,12 +79,63 @@
         }
     }
 
+    .expert-section {
+        h2 {
+            font-size: 18px;
+            text-align: center;
+  
+            span {
+                display: block;
+            }
+        }
+
+        .drag-drop-file {
+            margin-bottom: 20px;
+
+            .drag-upload-container {
+                span {
+                    background-color: #4682b4;
+                    color: #fff;
+                }
+            }
+        }
+
+        .image-container {
+            margin: 25px 0;
+        }
+
+        .expert-comment-section {
+            label {
+                display: block;
+            }
+
+            textarea {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                margin: 10px 0;
+            }
+
+            .submit-content {
+                text-align: center;
+                margin-top: 20px;
+
+                input[type=submit] {
+                    padding: 15px 25px;
+                    font-size: 16px;
+                    background-color: #4682b4;
+                    color: #fff;
+                    letter-spacing: 1px;
+                    border: 0;
+                    border-radius: 25px;
+                }
+            }
+        }
+    }
+
     .image-container {
         text-align: center;
-
-        img {
-            min-width: 500px;
-        }
     }
 
     .doubt-comments {
@@ -114,7 +167,7 @@
 
             input[type=submit] {
                 display: block;
-                background-color: #999;
+                background-color: #4682b4;
                 width: 100%;
                 padding: 18px;
                 color: #000;
@@ -122,10 +175,21 @@
                 font-weight: 700;
                 letter-spacing: 1px;
                 border: 0;
+                color: #fff;
 
                 &:hover {
                     cursor: pointer;
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .doubt-page-container {
+        .image-container {
+            img {
+                min-width: 450px;
             }
         }
     }

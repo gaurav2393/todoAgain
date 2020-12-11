@@ -1,7 +1,10 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-const UploadDocument = ({ fileOnChange }) => {
+const UploadDocument = ({
+		fileOnChange,
+		title
+	}) => {
 	const onDrop = useCallback(acceptedFiles => {
 		const reader = new FileReader()
 
@@ -27,7 +30,7 @@ const UploadDocument = ({ fileOnChange }) => {
 			<div className="drag-upload-container" {...getRootProps()}>
 				<input {...getInputProps()} />
 				<span>
-					Upload Your Question Here
+					{title ? title : 'Upload Your Question Here'}
 				</span>
 				<img src="/images/svgs/camera.svg" alt="camera image to upload" />
 			</div>

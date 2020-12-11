@@ -19,12 +19,10 @@ var ThreadSchema = ({
             required: true
         },
         email: {
-            type: String,
-            required: true
+            type: String
         },
         phoneNumber: {
-            type: Number,
-            required: true
+            type: Number
         }
     },
     createdDate: {
@@ -49,35 +47,29 @@ var ThreadSchema = ({
         }],
         createdBy: {
             name: {
-                type: String,
-                required: true
+                type: String
             },
             email: {
-                type: String,
-                required: true
+                type: String
             }
         }
     },
     comments: [{
         desc: {
-            type: String,
-            required: true
+            type: String
         },
         docsIds: [{
             type: String
         }],
         createdBy: {
             name: {
-                type: String,
-                required: true
+                type: String
             },
             email: {
-                type: String,
-                required: true
+                type: String
             },
             number: {
-                type: Number,
-                required: true
+                type: Number
             }
         },
         status: {

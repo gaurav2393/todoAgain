@@ -26,20 +26,32 @@ db.once('open', function callback () {
 // require them and mount them to their respective routes below
 
 // router.use('/todos', todosRouter);
-router.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+try {
+    router.get('/', function (req, res) {
+        try {
+            res.sendFile(path.join(__dirname, 'index.html'));
+        } catch (error) {
+            console.log('error getting html router get', error);
+        }
+    });
 
-//router for courses
-router.use('/addQuestions', questionsRouter);
-router.use('/courses', coursesRouter);
-router.use('/practiceTopic', practiceTopicRouter);
-router.use('/uploadDoubtImage', uploadDoubtImage);
-router.use('/createThread', createThread);
-router.use('/alldoubts', doubtPage);
-router.use('/users', userRoutes);
-router.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../../public/index.html'));
-});
+    //router for courses
+    router.use('/addQuestions', questionsRouter);
+    router.use('/courses', coursesRouter);
+    router.use('/practiceTopic', practiceTopicRouter);
+    router.use('/uploadDoubtImage', uploadDoubtImage);
+    router.use('/createThread', createThread);
+    router.use('/alldoubts', doubtPage);
+    router.use('/users', userRoutes);
+    router.get('/*', function (req, res) {
+        try {
+            res.sendFile(path.join(__dirname, '../../public/index.html'));
+        } catch (error) {
+            console.log('error getting get 404', error);
+        }
+    });
+} catch (err) {
+    console.log('Main application errored', err);
+}
 
 module.exports = router;

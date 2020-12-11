@@ -9,7 +9,6 @@ router.route('/:threadId')
     .post(controller.postComment)
 
 router.route('/')
-    .get(controller.getCreateThread)
     .post(controller.postCreateThread)
 
 module.exports = router;

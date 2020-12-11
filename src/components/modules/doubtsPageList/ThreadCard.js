@@ -7,12 +7,12 @@ var ThreadCard = (props) => {
         <Fragment>
             <li className="thread-card">
                 <Link to={`/doubts/${threadData.threadId}`}>
-                    <span>
+                    {threadData.name && <span>
                         {threadData.name}
-                    </span>
-                    <span>
+                    </span>}
+                    {threadData.threadDesc && <span>
                         {threadData.threadDesc || ''}
-                    </span>
+                    </span>}
                     <span>
                         {threadData.createdDate}
                     </span>

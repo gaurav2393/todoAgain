@@ -13,4 +13,7 @@ router.route('/:id')
 router.route('/')
     .get(controller.getDoubts)
 
+router.route('/expert/comment/:id')
+    .post(controller.postExpertComment)
+
 module.exports = router;

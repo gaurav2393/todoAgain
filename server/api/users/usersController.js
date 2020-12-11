@@ -5,28 +5,32 @@ var HttpError = require('../httpError/httpErrorModel');
 const jwt = require('jsonwebtoken');
 
 exports.params = async function(req, res, next) {
-  let existingUser;
-  const { loginEmail } = req.body;
   try {
-    existingUser = await Users.findOne({ email: loginEmail });
-  } catch (err) {
+    let existingUser;
+    const { loginEmail } = req.body;
+    try {
+      existingUser = await Users.findOne({ email: loginEmail });
+    } catch (err) {
+        const error = new HttpError(
+          'Signing up failed, please try again later.',
+          500
+        );
+        return next(error);
+    }
+
+    if (!existingUser) {
       const error = new HttpError(
-        'Signing up failed, please try again later.',
-        500
+        'Invalid credentials, could not log you in.',
+        403
       );
       return next(error);
-  }
+    }
 
-  if (!existingUser) {
-    const error = new HttpError(
-      'Invalid credentials, could not log you in.',
-      403
-    );
-    return next(error);
+    req.existingUser = existingUser;
+    next();
+  } catch (error) {
+    console.log('users controller params crashed', error);
   }
-
-  req.existingUser = existingUser;
-  next();
 }
 
 exports.getUserData = async function() {

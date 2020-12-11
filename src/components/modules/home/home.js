@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-	Link
-} from 'react-router-dom';
 import UploadDocument from '../common/uploadDocument';
 import VideoContainer from '../common/VideoContainer';
-import UploadDoubtForm from './UploadDoubtForm';
 import { monthsArray } from '../../utils/constants';
 import DoubtsPageList from '../doubtsPageList';
 
@@ -19,7 +15,6 @@ class Home extends React.Component {
 				phoneNumber: ''
 			},
 			fileObject: null,
-			noImageUploaded: false
 		}
 		this.fileOnChange = this.fileOnChange.bind(this);
 		this.handleChange = this.handleChange.bind(this);
@@ -36,6 +31,9 @@ class Home extends React.Component {
 			return data.json();
 		}).then(data=> {
 			return data;
+		})
+		.catch(error => {
+			console.log('Home js errored', error);
 		})
 	}
 
@@ -79,15 +77,12 @@ class Home extends React.Component {
 				body: JSON.stringify(userFields)
 			})
 			return false;
-		} else {
-			this.setState({
-				noImageUploaded: true
-			})
 		}
 	}
 
 	render() {
-		const { fileObject, userFields, noImageUploaded } = this.state;
+		const { fileObject, userFields } = this.state;
+		const { isLoggedIn } = this.props;
 
 		return (
 			<div className="home-container">
@@ -102,43 +97,79 @@ class Home extends React.Component {
 						<UploadDocument
 							fileOnChange={this.fileOnChange}
 						/>
+						<div className="home-upload-image-container">
+							{
+								fileObject &&
+									<img src={fileObject} />
+							}
+						</div>
+						{
+							fileObject && !isLoggedIn &&
+							<form onSubmit={this.handleSubmit} className="home-doubt-form-container">
+								<div className="home-doubt-form-field">
+									<label htmlFor="name">Name: *</label>
+									<input name="name" id="name" onChange={this.handleChange}
+										value={userFields.name} pattern="[a-zA-Z]+"
+										required
+										placeholder="Enter you name"
+									/>
+								</div>
+								<div className="home-doubt-form-field">
+									<label htmlFor="email">Email:</label>
+									<input name="email" id="email"
+										onChange={this.handleChange} type="email"
+										value={userFields.email}
+										placeholder="Enter your email"
+									/>
+								</div>
+								<div className="home-doubt-form-field">
+									<label htmlFor="phoneNumber">Phone Number:</label>
+									<input name="phoneNumber" id="phoneNumber"
+										pattern="[0-9]{+}" onChange={this.handleChange}
+										value={userFields.phoneNumber}
+										placeholder="Enter your phone number"
+									/>
+								</div>
+								<div className="home-doubt-form-field">
+									<label htmlFor="threadDesc">
+										Any comments:
+									</label>
+									<textarea rows="7" name="threadDesc" id="threadDesc" onChange={this.handleChange}
+										placeholder="Enter any other decriptiom about the question or any specific doubt you have"
+									>
+										{userFields.threadDesc}
+									</textarea>
+								</div>
+								<div className="home-doubt-form-field">
+									<input
+										type="submit"
+										value="Submit"
+									/>
+								</div>
+							 </form>
+						}
+						
 					</div>
 					<div className="video-container-home">
 						<VideoContainer
 						/>
 					</div>
 				</div>
-				<div className="whatsapp-container">
-					<p className="whatsapp-message">
-						To get added to our whatsapp community. Click Here.
-					</p>
-					<img src="/images/svgs/whatsapp.svg" />
-					<p className="whatsapp-extra-message">
-						Discusstion Point. A pop-up form will be generated which will 
-						allow them to fill details Mobile Number, Board, Class.
-					</p>
+				<div>
+					<a className="whatsapp-container" href="https://chat.whatsapp.com/DL2nfQ97BmA59PC7CdULZl" target="_blank">
+						<p className="whatsapp-message">
+							To get added to our whatsapp community. Click Here.
+						</p>
+						<img src="/images/svgs/whatsapp.svg" />
+						<p className="whatsapp-extra-message">
+							Discusstion Point. A pop-up form will be generated which will 
+							allow them to fill details Mobile Number, Board, Class.
+						</p>
+					</a>
 				</div>
 				<div className="top-asked-container">
-					<h2>
-						Top Asked Questions
-					</h2>
-					<DoubtsPageList />
-					<div className="view-all-doubts">
-						<Link to='/doubts'>
-							View All
-						</Link>
-					</div>
+					<DoubtsPageList isHomePage />
 				</div>
-				{
-					fileObject &&
-						<img src={fileObject} />
-				}
-				<UploadDoubtForm
-					formData={userFields}
-					handleChange={this.handleChange}
-					handleSubmit={this.handleSubmit}
-					noImageUploaded={noImageUploaded}
-				/>
 			</div>
 		)
 	}

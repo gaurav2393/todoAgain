@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { Link } from 'react-router-dom';
 
 class primaryNavigation extends React.PureComponent {
     constructor(props) {
@@ -30,12 +30,17 @@ class primaryNavigation extends React.PureComponent {
             <div className="navigation-container">
                 <nav ref="primaryNavigation" className="primary-navigation">
                     <ul>
-                        <li className="nav-level-1 active-nav">
-                            <a>
+                        <li>
+                            <Link to='/'>
                                 Home
-                            </a>
+                            </Link>
                         </li>
-                        <li className="nav-level-1 has-sub-navigation" onMouseOver={this.showSubNavigation} 
+                        <li>
+                            <Link to='/doubts'>
+                                Doubts List
+                            </Link>
+                        </li>
+                        {/* <li className="nav-level-1 has-sub-navigation" onMouseOver={this.showSubNavigation} 
                             onMouseOut={this.hideSubNavigation} >
                             <a className="accordion-button-required">
                                 Courses
@@ -104,7 +109,7 @@ class primaryNavigation extends React.PureComponent {
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
                 <button ref="burgerMenu" className="header-menu-icon" onClick={this.toggleNavMobile}>

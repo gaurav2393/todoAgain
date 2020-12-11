@@ -35,6 +35,7 @@ class Login extends React.Component {
                     nameValue: response.userId,
                     tokenValue: response.token,
                     typeValue: response.userType,
+                    emailValue: response.email
                 });
                 setLoginDetails(response);
                 this.setState({

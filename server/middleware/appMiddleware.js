@@ -13,13 +13,17 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 
 
 module.exports = function(app) {
-    app.use(require('webpack-dev-middleware')(compiler, {
-        noInfo: true,
-        publicPath: webpackConfig.output.publicPath
-    }));
-    app.use('/', express.static(path.join(__dirname,'../../public')));
-    app.use(morgan('dev'));
-    app.use(bodyParser.urlencoded({ extended: true }));
-    app.use(bodyParser.json());
-    app.use(multer().any());
+    try {
+        app.use(require('webpack-dev-middleware')(compiler, {
+            noInfo: true,
+            publicPath: webpackConfig.output.publicPath
+        }));
+        app.use('/', express.static(path.join(__dirname,'../../public')));
+        app.use(morgan('dev'));
+        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.json());
+        app.use(multer().any());
+    } catch (error) {
+        console.log('app middleware crashed', error);
+    }
 }

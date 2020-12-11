@@ -6,10 +6,15 @@
 		flex-wrap: wrap;
 		background-color: #4682b4;
 		padding: 30px;
+		flex-wrap: wrap;
 
 		.upload-document-home, .video-container-home {
 			flex: 0 0 100%;
 			width: 100%;
+
+			video {
+				max-width: 100%;
+			}
 		}
 
 		.upload-document-home {
@@ -26,6 +31,52 @@
 				font-size: 26px;
 				color: #fff;
 			}
+
+			.home-upload-image-container {
+				padding: 20px;
+
+				img {
+					max-width: 100%;
+					width: auto;
+				}
+			}
+		}
+
+		.home-doubt-form-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			.home-doubt-form-field {
+				flex: 0 0 48%;
+				margin: 10px 0;
+
+				label {
+					display: block;
+					color: #fff;
+					margin: 0 0 8px 10px;
+					text-align: left;
+				}
+
+				input {
+					border-radius: 20px;
+				}
+
+				input[type=submit] {
+					padding: 17px;
+					background-color: #5f9ea0;
+					font-size: 18px;
+					color: #fff;
+				}
+
+				input,
+				textarea {
+					display: block;
+					width: 100%;
+					padding: 10px;
+					border: 0;
+				}
+			}
 		}
 	}
 
@@ -35,9 +86,11 @@
 		border: 2px solid black;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
 
 		.whatsapp-message {
 			font-size: 20px;
+			text-align: center;
 		}
 
 		.whatsapp-extra-message {
@@ -87,6 +140,10 @@
 			.upload-document-home, .video-container-home {
 				flex: 0 0 48%;
 				width: 48%;
+
+				video {
+					width: 452px;
+				}
 			}
 		}
 	}

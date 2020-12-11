@@ -6,9 +6,12 @@ const path = require('path');
 
 todosRouter.route('/')
     .get(function(req, res, next){
-        console.log('gdgd');
-        res.send('Inside sub-router');
-        //res.sendFile('../public/todos.html');
+        try {
+            res.send('Inside sub-router');
+            // res.sendFile('../public/todos.html');
+        } catch (error) {
+            console.log('todos router crashed', error);
+        }
     })
     .post(function(req, res){
 
@@ -16,11 +19,15 @@ todosRouter.route('/')
 
 
 todosRouter.param('id', function(req, res, next, id){
-    //Incase you want to do something on any URL which has parameter id 
+    // Incase you want to do something on any URL which has parameter id 
 })
 
 todosRouter.get('/:id', function(req, res){
-    res.sendFile(path.join(__dirname, 'todos1.html'));
+    try {
+        res.sendFile(path.join(__dirname, 'todos1.html'));
+    } catch (error) {
+        console.log('todos router get id crashed', error);
+    }
 })
 
 module.exports = todosRouter;
